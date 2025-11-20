@@ -24,9 +24,6 @@ describe('UniswapV3Factory', () => {
     const poolBytecode = (await ethers.getContractFactory('UniswapV3Pool')).bytecode
     console.log('poolBytecode size', poolBytecode.length)
 
-    const UniswapV3PoolFactory = await ethers.getContractFactory('UniswapV3Pool')
-    const pool = await UniswapV3PoolFactory.deploy()
-    await pool.waitForDeployment()
     const [deployer, otherSigner] = await ethers.getSigners()
     const factoryFactory = await ethers.getContractFactory('UniswapV3Factory')
     const factory = await factoryFactory.deploy()
